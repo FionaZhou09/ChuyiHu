@@ -1,6 +1,6 @@
 # Agent Guide
 
-This repository is a static Next.js site for a therapy practice.
+This repository is a website design project by **mimiloom.studio** ([mimiloom.studio](https://mimiloom.studio)). It builds the therapy practice site for Chuyi Hu. Production domain: `https://chuyihu.com`.
 
 ## Stack
 
