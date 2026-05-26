@@ -53,15 +53,40 @@ Production builds use `output: "export"` and `trailingSlash: true`, generating s
 
 Hosted on **Cloudflare Pages** with custom domain **chuyihu.com**.
 
-```bash
-npm install
-npm run build
-```
+### Cloudflare Pages settings
 
-Set in Cloudflare for correct metadata and Open Graph URLs:
+| Setting | Value |
+|---|---|
+| **Production branch** | `main` |
+| **Build command** | `npm run build` |
+| **Build output directory** | `out` |
+| **Node.js version** | `22` (or `20.9+`) |
+
+Environment variable for metadata and Open Graph URLs:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://chuyihu.com
+```
+
+### If the build fails on `lightningcss.linux-x64-gnu`
+
+This repo pins the Linux native binary as an optional dependency in `package.json`. After pushing fixes, confirm Cloudflare is building the **latest commit on `main`**, not an older deployment.
+
+In the build log, check the clone step:
+
+```text
+HEAD is now at <commit> ...
+```
+
+That commit should match the latest on GitHub (`main`), not an older hash like `fda822d`.
+
+If Cloudflare keeps retrying an old failed deployment, open **Deployments → Create deployment** and select the latest `main` commit, or push a new commit to trigger a fresh build.
+
+Local build:
+
+```bash
+npm install
+npm run build
 ```
 
 ## Repository
