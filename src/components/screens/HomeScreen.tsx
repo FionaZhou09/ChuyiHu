@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { BookIntroModal } from "./BookIntroModal";
 import { TherapistPhoto } from "./therapist-photo";
+import { PlantFeature } from "./plant-feature";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },
@@ -46,6 +47,17 @@ export function HomeScreen() {
             A private, virtual multilingual space for life transitions, old patterns, and the
             quiet work of moving forward with clarity.
           </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.16, duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+        >
+          <PlantFeature
+            priority
+            caption="A quiet visual pause before the work of change begins."
+          />
         </motion.div>
 
         <motion.div

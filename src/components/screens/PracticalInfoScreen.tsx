@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { PlantFeature } from "./plant-feature";
 
 const insurers = [
   "Aetna",
@@ -227,6 +228,17 @@ export function PracticalInfoScreen() {
             Sessions are conducted in English, Mandarin, or Cantonese — whichever feels most natural
             for your expression.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.58, duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        >
+          <PlantFeature
+            className="max-h-[420px]"
+            caption="A simple next step can still feel spacious."
+          />
         </motion.div>
       </div>
 

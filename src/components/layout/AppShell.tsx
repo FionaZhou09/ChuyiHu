@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { BookOpen, Sparkles, Info, CalendarCheck } from "lucide-react";
 import { TherapistPhoto } from "@/components/screens/therapist-photo";
-import { PlantAtmosphere } from "./plant-atmosphere";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Sparkles },
@@ -19,10 +18,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative flex min-h-svh overflow-x-hidden">
-      <PlantAtmosphere />
-
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 border-r border-[var(--app-border)] bg-[rgba(253,251,247,0.92)] backdrop-blur-sm z-20">
+      <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 border-r border-[var(--app-border)] bg-[var(--app-surface)] z-20">
         {/* Logo / Name */}
         <div className="px-6 pt-8 pb-6 border-b border-[var(--app-border)]">
           <div className="flex items-center gap-3">
@@ -87,7 +84,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Mobile Bottom Tab Bar */}
-      <nav className="fixed bottom-0 left-0 right-0 md:hidden bg-[rgba(253,251,247,0.94)] backdrop-blur-sm border-t border-[var(--app-border)] pb-[env(safe-area-inset-bottom)] z-30">
+      <nav className="fixed bottom-0 left-0 right-0 md:hidden bg-[var(--app-surface)] border-t border-[var(--app-border)] pb-[env(safe-area-inset-bottom)] z-30">
         <div className="flex justify-around items-center h-14">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href;
