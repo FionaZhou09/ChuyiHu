@@ -1,28 +1,26 @@
 # Agent Guide
 
-This repository is a website design project by **mimiloom.studio** ([mimiloom.studio](https://mimiloom.studio)). It builds the therapy practice site for Chuyi Hu. Production domain: `https://chuyihu.com`.
+Static HTML/CSS/JS website for **Chuyi Hu Therapy** — a website design project by [mimiloom.studio](https://mimiloom.studio). Production domain: `https://chuyihu.com`.
 
 ## Stack
 
-- Next.js App Router
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- lucide-react
+- Plain HTML pages at the repo root and in subfolders (`about/`, `specialties/`, `practical-info/`)
+- CSS in `css/styles.css`
+- Minimal JavaScript in `js/main.js` (booking modal only)
 
 ## Commands
 
+Local preview:
+
 ```bash
-npm install
-npm run dev
-npm run lint
-npm run build
+python3 -m http.server 8080
 ```
+
+There is no build step, no npm install, and no framework.
 
 ## Notes
 
-- The site is static: do not add API routes, database code, auth, or server-only platform SDKs unless the project requirements change.
-- `next.config.ts` uses `output: "export"` and `trailingSlash: true` so routes like `/practical-info/` generate `index.html`.
-- Keep pages as thin route entries under `src/app/`; feature UI lives in `src/components/`.
-- Public images live in `public/`.
+- Do not reintroduce Next.js, React, Tailwind, or other build tooling unless the project requirements change.
+- Keep pages as static HTML files. Shared layout (sidebar, bottom nav, modal) is duplicated across pages.
+- Images live at the repo root: `chuyi-hu-headshot.jpeg`, `minimal-therapy-plant.png`.
+- Cloudflare Pages: empty build command, output directory `/`.

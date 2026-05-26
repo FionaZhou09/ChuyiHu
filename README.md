@@ -13,81 +13,40 @@ Website design and development for **Chuyi Hu, LMHC, LPC** — a multilingual me
 | **Domain** | [chuyihu.com](https://chuyihu.com) |
 | **Scope** | Personal brand website — design, build, and deployment |
 
-The site gives Chuyi a calm, professional online presence for her private practice. It introduces her background, specialties, and practical information, with clear paths to book through Alma, Headway, and Psychology Today.
+Plain static site: HTML, CSS, and a small amount of JavaScript. No build step, no npm dependencies.
 
-### What we built
+## Site structure
 
-- Custom domain and static hosting setup on Cloudflare Pages
-- Warm, minimal visual design suited to a therapy practice
-- Pages for Home, About, Specialties, and Practical Info
-- Responsive layout with subtle motion
-- Fast static export — no server or database required
-
-## Tech stack
-
-- Next.js App Router (static export)
-- React + TypeScript
-- Tailwind CSS v4
-- Framer Motion
-- lucide-react
-
-## Local development
-
-```bash
-npm install
-npm run dev
+```
+index.html              Home
+about/index.html        About
+specialties/index.html  Specialties
+practical-info/index.html  Booking & practice info
+css/styles.css          Styles
+js/main.js              Booking modal
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Local preview
 
-## Checks
+From the project root:
 
 ```bash
-npm run lint
-npm run build
+python3 -m http.server 8080
 ```
 
-Production builds use `output: "export"` and `trailingSlash: true`, generating static HTML in `out/`.
+Open [http://localhost:8080](http://localhost:8080).
 
 ## Deployment
 
 Hosted on **Cloudflare Pages** with custom domain **chuyihu.com**.
 
-### Cloudflare Pages settings
-
 | Setting | Value |
 |---|---|
 | **Production branch** | `main` |
-| **Build command** | `npm run build` |
-| **Build output directory** | `out` |
-| **Node.js version** | `22` (or `20.9+`) |
+| **Build command** | *(leave empty — static site)* |
+| **Build output directory** | `/` |
 
-Environment variable for metadata and Open Graph URLs:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://chuyihu.com
-```
-
-### If the build fails on `lightningcss.linux-x64-gnu`
-
-This repo pins the Linux native binary as an optional dependency in `package.json`. After pushing fixes, confirm Cloudflare is building the **latest commit on `main`**, not an older deployment.
-
-In the build log, check the clone step:
-
-```text
-HEAD is now at <commit> ...
-```
-
-That commit should match the latest on GitHub (`main`), not an older hash like `fda822d`.
-
-If Cloudflare keeps retrying an old failed deployment, open **Deployments → Create deployment** and select the latest `main` commit, or push a new commit to trigger a fresh build.
-
-Local build:
-
-```bash
-npm install
-npm run build
-```
+No `npm install` or build step required. Cloudflare serves the HTML, CSS, JS, and images directly from the repository root.
 
 ## Repository
 
