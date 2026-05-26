@@ -4,8 +4,8 @@
   --app-surface: #fdfbf7;
   --app-border: rgba(36, 26, 20, 0.08);
   --app-text: #241a14;
-  --app-text-secondary: #5f7464;
-  --app-text-muted: rgba(36, 26, 20, 0.52);
+  --app-text-secondary: #475a4f;
+  --app-text-muted: rgba(36, 26, 20, 0.66);
   --font-heading: "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -24,7 +24,7 @@ body {
   margin: 0;
   min-height: 100svh;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 17px;
   color: var(--app-text);
   background: var(--app-surface);
   -webkit-font-smoothing: antialiased;
@@ -152,11 +152,11 @@ button {
 }
 
 .section-label {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--app-text-muted);
+  color: var(--app-text-secondary);
 }
 
 .hero-title {
@@ -178,9 +178,9 @@ button {
 
 .lead {
   margin: 0;
-  font-size: 0.75rem;
-  line-height: 1.6;
-  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  font-weight: 400;
   color: var(--app-text-muted);
 }
 
@@ -239,9 +239,9 @@ button {
 
 .profile-bio {
   margin: 0.25rem 0 0;
-  font-size: 0.6875rem;
-  line-height: 1.5;
-  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  font-weight: 400;
   color: var(--app-text-muted);
 }
 
@@ -263,14 +263,15 @@ button {
 }
 
 .plant-feature:not(.short) img {
-  min-height: 180px;
+  min-height: 210px;
   height: auto;
-  max-height: 220px;
+  max-height: 250px;
 }
 
 .plant-feature.short img {
-  min-height: 280px;
-  max-height: none;
+  min-height: 150px;
+  height: auto;
+  max-height: 170px;
 }
 
 .plant-caption {
@@ -280,11 +281,11 @@ button {
   bottom: 1rem;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(4px);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--app-text-secondary);
 }
 
@@ -387,13 +388,13 @@ button {
 
 .action-title {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
 }
 
 .action-desc {
   margin: 0;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: var(--app-text-muted);
 }
 
@@ -405,8 +406,8 @@ button {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem 1rem;
-  font-size: 0.6875rem;
-  font-weight: 300;
+  font-size: 0.8125rem;
+  font-weight: 400;
 }
 
 .verify-item {
@@ -446,7 +447,7 @@ button {
 .specialty-tile-desc {
   display: block;
   margin-top: 0.125rem;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   color: var(--app-text-secondary);
 }
 
@@ -607,9 +608,9 @@ button {
 
 .specialty-card-body {
   margin: 0.5rem 0 0;
-  font-size: 0.6875rem;
-  line-height: 1.6;
-  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  font-weight: 400;
   color: var(--app-text-muted);
 }
 
@@ -678,9 +679,9 @@ button {
 .info-list {
   display: grid;
   gap: 0.5rem;
-  font-size: 0.6875rem;
-  line-height: 1.5;
-  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .info-row {
@@ -702,15 +703,15 @@ button {
 
 .info-row p {
   margin: 0;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: var(--app-text-muted);
 }
 
 .note-italic {
   padding-top: 0.625rem;
   border-top: 1px solid var(--app-border);
-  font-size: 0.5625rem;
-  line-height: 1.5;
+  font-size: 0.6875rem;
+  line-height: 1.55;
   font-style: italic;
   color: var(--app-text-muted);
 }
